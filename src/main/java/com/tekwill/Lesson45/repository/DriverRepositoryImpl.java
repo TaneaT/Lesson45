@@ -13,7 +13,7 @@ public class DriverRepositoryImpl implements DriverRepository {
 
     @Override
     public void createTable() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/db1?user=root&password=tanea2003";
+        String url = ""; //url to db
         try(Connection connection = DriverManager.getConnection(url)){
 
             PreparedStatement createTable = connection.prepareStatement("CREATE TABLE driver(\n" +
@@ -33,7 +33,7 @@ public class DriverRepositoryImpl implements DriverRepository {
 
     @Override
     public void createDriver(com.tekwill.Lesson45.Driver driver) throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/db1?user=root&password=tanea2003";
+        String url = "";
         try (Connection connection = DriverManager.getConnection(url)) {
 
             PreparedStatement createDriver = connection.prepareStatement("INSERT INTO driver(first_name,last_name,experience) VALUES (?,?,?);");
@@ -51,7 +51,7 @@ public class DriverRepositoryImpl implements DriverRepository {
 
     @Override
     public com.tekwill.Lesson45.Driver getDriverById(long driverId) throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/db1?user=root&password=tanea2003";
+        String url = "";
         try (Connection connection = DriverManager.getConnection(url)) {
             PreparedStatement getDriverById = connection.prepareStatement("SELECT * FROM driver WHERE id = ?;");
 //            PreparedStatement delete = connection.prepareStatement("DELETE FROM driver WHERE id IN(3,4,5,6,7,8); ");
@@ -83,7 +83,7 @@ public class DriverRepositoryImpl implements DriverRepository {
 
     @Override
     public List<com.tekwill.Lesson45.Driver> getAllDrivers() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/db1?user=root&password=tanea2003";
+        String url = "";
         try (Connection connection = DriverManager.getConnection(url)) {
 
             PreparedStatement getAllDrivers = connection.prepareStatement("SELECT * FROM driver;");
